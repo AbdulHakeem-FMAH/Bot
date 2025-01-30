@@ -17,10 +17,10 @@
             color: white;
         }
         .chat-container {
-            width: 360px;
-            height: 550px;
+            width: 600px;
+            height: 700px;
             background-color: #1a1a1a;
-            border-radius: 20px;
+            border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
@@ -28,13 +28,19 @@
             border: 1px solid #333;
         }
         .chat-header {
+            display: flex;
+            align-items: center;
             padding: 15px;
             background-color: #242424;
             border-bottom: 1px solid #444;
-            text-align: center;
-            font-weight: bold;
             font-size: 18px;
-            animation: fadeIn 1s ease-in-out;
+        }
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background: url('https://via.placeholder.com/40') center/cover;
         }
         .chat-messages {
             flex: 1;
@@ -54,45 +60,62 @@
             word-wrap: break-word;
             opacity: 0;
             animation: slideIn 0.5s ease-in-out forwards;
+            position: relative;
         }
         .message.sent {
             align-self: flex-end;
             background: linear-gradient(135deg, #ff6b6b, #ff4757);
             color: white;
-            box-shadow: 0px 4px 10px rgba(255, 71, 87, 0.3);
         }
         .message.received {
             align-self: flex-start;
             background: #2d2d2d;
             color: white;
-            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .reaction {
+            font-size: 12px;
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+            opacity: 0.7;
         }
-        
+        .chat-footer {
+            padding: 10px;
+            border-top: 1px solid #444;
+            background-color: #242424;
+            display: flex;
+            align-items: center;
+        }
+        .chat-input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background-color: #333;
+            color: white;
+        }
+        .send-btn {
+            background: none;
+            border: none;
+            color: #ff4757;
+            font-size: 18px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
         @keyframes slideIn {
             from { transform: translateY(10px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        
-        .message:nth-child(1) { animation-delay: 0.2s; }
-        .message:nth-child(2) { animation-delay: 0.4s; }
-        .message:nth-child(3) { animation-delay: 0.6s; }
-        .message:nth-child(4) { animation-delay: 0.8s; }
-        .message:nth-child(5) { animation-delay: 1s; }
-        .message:nth-child(6) { animation-delay: 1.2s; }
-        .message:nth-child(7) { animation-delay: 1.4s; }
-        .message:nth-child(8) { animation-delay: 1.6s; }
-        .message:nth-child(9) { animation-delay: 1.8s; }
-        .message:nth-child(10) { animation-delay: 2s; }
     </style>
 </head>
 <body>
     <div class="chat-container">
-        <div class="chat-header">To the eruma maadu reading this!</div>
+        <div class="chat-header">
+            <div class="profile-pic"></div>
+            <span>To the eruma maadu reading this!</span>
+        </div>
         <div class="chat-messages">
             <div class="message received">Hallooiiii Maadeyyyyy!!!!!!!</div>
             <div class="message sent">Irukiiyaaaa Panniiiiiiiiii!!!</div>
@@ -106,6 +129,10 @@
             <div class="message sent">Baaaaai baaaaaiii mangooosee mandayaaaaa!!!</div>
             <div class="message received">Happaadaaaaaaaa!!!</div>
             <div class="message sent">Ippothaan manasey aarudhalaa irukuuuuu!!!!!!!!</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" placeholder="Message...">
+            <button class="send-btn">➤</button>
         </div>
     </div>
 </body>
