@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test5</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+        .chat-container {
+            width: 360px;
+            height: 550px;
+            background-color: #1a1a1a;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        .chat-header {
+            padding: 15px;
+            background-color: #242424;
+            border-bottom: 1px solid #444;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .message {
+            max-width: 75%;
+            padding: 12px;
+            border-radius: 20px;
+            margin: 5px 0;
+            font-size: 14px;
+            line-height: 1.4;
+            word-wrap: break-word;
+            opacity: 0;
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+        .message.sent {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #ff6b6b, #ff4757);
+            color: white;
+            box-shadow: 0px 4px 10px rgba(255, 71, 87, 0.3);
+        }
+        .message.received {
+            align-self: flex-start;
+            background: #2d2d2d;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .message:nth-child(1) { animation-delay: 0.2s; }
+        .message:nth-child(2) { animation-delay: 0.4s; }
+        .message:nth-child(3) { animation-delay: 0.6s; }
+        .message:nth-child(4) { animation-delay: 0.8s; }
+        .message:nth-child(5) { animation-delay: 1s; }
+        .message:nth-child(6) { animation-delay: 1.2s; }
+        .message:nth-child(7) { animation-delay: 1.4s; }
+        .message:nth-child(8) { animation-delay: 1.6s; }
+        .message:nth-child(9) { animation-delay: 1.8s; }
+        .message:nth-child(10) { animation-delay: 2s; }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">To the eruma maadu reading this!</div>
+        <div class="chat-messages">
+            <div class="message received">Hallooiiii Maadeyyyyy!!!!!!!</div>
+            <div class="message sent">Irukiiyaaaa Panniiiiiiiiii!!!</div>
+            <div class="message received">Water Baffllooooo...irukiyaaaaaaaa!!!!</div>
+            <div class="message sent">Orangutaaan mandayaaaaaa!!!!</div>
+            <div class="message received"> 🐒🐒🐒🐒🐒🐒🐒🐒</div>
+            <div class="message sent">Gurrrrr Gurrrrr erumaaa...</div>
+            <div class="message received">Panni maadey irukiyaaaaa!!!</div>
+            <div class="message sent">Idiot..baffloooo....</div>
+            <div class="message received">Chimpanzeeeeeeee korangeyyyyyy!!!!!!</div>
+            <div class="message sent">Baaaaai baaaaaiii mangooosee mandayaaaaa!!!</div>
+            <div class="message received">Happaadaaaaaaaa!!!</div>
+            <div class="message sent">Ippothaan manasey aarudhalaa irukuuuuu!!!!!!!!</div>
+        </div>
+    </div>
+</body>
+</html>
