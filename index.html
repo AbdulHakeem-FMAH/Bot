@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test5</title>
+    <title>Instagram Chat UI - Dark Mode</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         
@@ -17,11 +17,11 @@
             color: white;
         }
         .chat-container {
-            width: 600px;
-            height: 700px;
+            width: 450px;
+            height: 750px;
             background-color: #1a1a1a;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -34,13 +34,16 @@
             background-color: #242424;
             border-bottom: 1px solid #444;
             font-size: 18px;
+            animation: fadeIn 1s ease-in-out;
         }
         .profile-pic {
-            width: 40px;
-            height: 40px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             margin-right: 10px;
             background: url('https://via.placeholder.com/40') center/cover;
+            border: 2px solid #ff4757;
+            animation: popIn 0.5s ease-in-out;
         }
         .chat-messages {
             flex: 1;
@@ -49,6 +52,7 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+            scrollbar-width: none;
         }
         .message {
             max-width: 75%;
@@ -66,18 +70,20 @@
             align-self: flex-end;
             background: linear-gradient(135deg, #ff6b6b, #ff4757);
             color: white;
+            box-shadow: 0px 4px 10px rgba(255, 71, 87, 0.3);
         }
         .message.received {
             align-self: flex-start;
             background: #2d2d2d;
             color: white;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
         }
         .reaction {
             font-size: 12px;
             position: absolute;
             bottom: -20px;
             right: 10px;
-            opacity: 0.7;
+            opacity: 0.8;
         }
         .chat-footer {
             padding: 10px;
@@ -100,20 +106,32 @@
             background: none;
             border: none;
             color: #ff4757;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
             margin-left: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .send-btn:hover {
+            transform: scale(1.2);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         @keyframes slideIn {
             from { transform: translateY(10px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <div class="profile-pic"></div>
+            <img src="Monkey.jpg" alt="Profile Picture" class="profile-pic">
             <span>To the eruma maadu reading this!</span>
         </div>
         <div class="chat-messages">
@@ -129,6 +147,10 @@
             <div class="message sent">Baaaaai baaaaaiii mangooosee mandayaaaaa!!!</div>
             <div class="message received">Happaadaaaaaaaa!!!</div>
             <div class="message sent">Ippothaan manasey aarudhalaa irukuuuuu!!!!!!!!</div>
+            <div class="message received">Paravaala....IDC!!!!</div>
+            <div class="message sent">Enaku idhu mass aah irukuuuuuuuu!!!!!</div>
+            <div class="message received">Vartaaa da mandayaaa!!!</div>
+            <div class="message sent">Paaiiiii poiiiiii!!!!!</div>
         </div>
         <div class="chat-footer">
             <input type="text" class="chat-input" placeholder="Message...">
